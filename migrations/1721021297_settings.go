@@ -17,7 +17,7 @@ func init() {
 		settings, _ := dao.FindSettings()
 		settings.Meta.AppName = "Project Serendib"
 		settings.Backups.Cron = "@hourly"
-		settings.Backups.CronMaxKeep = 5
+		settings.Backups.CronMaxKeep = 24
 
 		admin := &models.Admin{}
 		admin.Email = "admin@projectserendib.com"
