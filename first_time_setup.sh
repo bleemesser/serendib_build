@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Install Git and Nginx
 sudo apt update
