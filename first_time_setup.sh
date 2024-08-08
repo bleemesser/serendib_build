@@ -3,13 +3,17 @@
 # Install Git and Nginx
 sudo apt update
 sudo apt upgrade -y
-sudo apt install -y nginx
+sudo apt install -y nginx python-certbot-nginx
+sudo snap install --classic certbot
+sudo ln -s /snap/bin/certbot /usr/bin/certbot
 
 # Copy nginx.conf to /etc/nginx/nginx.conf and reload Nginx
 sudo useradd nginx
 sudo cp nginx.conf /etc/nginx/nginx.conf
 sudo systemctl restart nginx
 sudo nginx -s reload
+
+# sudo certbot --nginx -d survey.projectserendib.com -d www.survey.projectserendib.com
 
 # Create a systemd service file to run the server
 cat << EOF | sudo tee /etc/systemd/system/pocketbase.service > /dev/null
